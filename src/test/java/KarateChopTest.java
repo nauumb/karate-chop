@@ -31,7 +31,7 @@ public class KarateChopTest {
     }
 
     @Test
-    void helloWorld() {
+    void karateChopperOK() {
 
         List<Integer> karatekas = new ArrayList<>();
 
