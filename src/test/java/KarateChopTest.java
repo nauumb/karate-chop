@@ -12,7 +12,6 @@ public class KarateChopTest {
     @BeforeAll
     static void setup() {
         System.out.println("@BeforeAll - executes once before all test methods in this class");
-        karateChop = new KarateChop();
     }
 
     @BeforeEach
@@ -40,11 +39,40 @@ public class KarateChopTest {
         karatekas.add(3);
         karatekas.add(4);
         karatekas.add(5);
+        karatekas.add(6);
+        karatekas.add(7);
+        karatekas.add(8);
+        karatekas.add(9);
+        karatekas.add(10);
 
-        Integer expected = 1;
-        Integer karateka = 2;
-        Integer actual = karateChop.karateChopper(karateka, karatekas);
+        int expected = 0;
+        int karateka = 1;
+        int actual = KarateChop.find(karatekas, karateka);
 
         assertEquals(expected, actual);
     }
+
+    @Test
+    void karateChopperKO() {
+
+        List<Integer> karatekas = new ArrayList<>();
+
+        karatekas.add(1);
+        karatekas.add(2);
+        karatekas.add(3);
+        karatekas.add(4);
+        karatekas.add(5);
+        karatekas.add(6);
+        karatekas.add(7);
+        karatekas.add(8);
+        karatekas.add(9);
+        karatekas.add(10);
+
+        int expected = -1;
+        int karateka = 100;
+        int actual = KarateChop.find(karatekas, karateka);
+
+        assertEquals(expected, actual);
+    }
+
 }
